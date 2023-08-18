@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: #08cdf5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game-info{
+    color:white;
+    position:absolute;
+    top:8rem;
+    left:50%;
+    transform:translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 25;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.5rem 3rem;
+}
+
+.grid{
+    width:90%;
+    max-width:20rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 2rem;
+    display: grid;
+    z-index: 10;
+    grid-template-columns: repeat(3, 1fr);
+    aspect-ratio: 1/1;
+}
+
+.box{
+    position:relative;
+    width:100%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    font-size: 3rem;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1, .box2, .box4, .box5{
+    border-right:2px solid rgba(255, 255, 255, 0.7);
+    border-bottom:2px solid rgba(255, 255, 255, 0.7);
+}
+
+.box3, .box6{
+    border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.box7, .box8{
+    border-right:2px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn{
+    color:white;
+    position: absolute;
+    bottom:9rem;
+    z-index: 25;
+    left:50%;
+    transform:translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.5rem 2rem;
+    cursor:pointer;
+    display: none;
+}
+
+.btn.active{
+    display: flex;
+}
+
+.win{
+    background-color: rgba(0, 255, 0, 0.3);
+}
+
+.celebration{
+    height: 100vh;
+    width: 100vw;
+    z-index: 20;
+    display: none;
+    position: absolute;
+}
+
+.celebration.active{
+    display: flex;
+}
+
+    /* for bg animation */
+    
+    i{
+        position: absolute;
+        z-index: -10;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        -webkit-animation: 'screen'  infinite;
+      animation: 'screen'  infinite;
+      display: block;
+    }
+
+    i.active{
+        display: block;
+    }
+    
+    
+    i:nth-child(1){
+        top:20px;
+        left:30px;
+            background: radial-gradient(center, ellipse cover,  rgba(2,226,252,0.65) 0%,rgba(0,0,0,0) 100%);
+        box-shadow:0px 0px 5px 0px #02e2fc;
+        animation-duration: 5s;
+    }
+    
+    i:nth-child(2){
+        top:420px;
+        right:30px;
+        background: radial-gradient(center, ellipse cover,  rgba(250,160,2,0.65) 0%,rgba(0,0,0,0) 100%);
+        box-shadow:0px 0px 5px 0px #faa002;
+        animation-duration: 21s;
+    }
+    
+    i:nth-child(3){
+        bottom:100px;
+        right:200px;
+        background: radial-gradient(center, ellipse cover,  rgba(20,252,2,0.65) 0%,rgba(0,0,0,0) 100%);
+        box-shadow:0px 0px 5px 0px #14fc02;
+        animation-duration: 5s;
+    }
+    
+    i:nth-child(4){
+        top:5px;
+        left:1030px;
+        background: radial-gradient(center, ellipse cover,  rgba(252,2,196,0.65) 0%,rgba(0,0,0,0) 100%);
+        box-shadow:0px 0px 5px 0px #fc02c4;
+        animation-duration: 4s;
+    }
+    
+    i:nth-child(5){
+        top:280px;
+        left:12px;
+        background: radial-gradient(center, ellipse cover,  rgba(139,44,148,0.65) 0%,rgba(0,0,0,0) 100%);
+        box-shadow:0px 0px 5px 0px #8b2c94;
+        animation-duration: 5s;
+    }
+    
+    i:nth-child(6){
+        top:550px;
+        left:700px;
+    background: radial-gradient(center, ellipse cover,  rgba(251,184,41,0.65) 0%,rgba(0,0,0,0) 100%);
+    box-shadow:0px 0px 5px 0px #FBB829; 
+        animation-duration: 6s;
+    }
+    
+    i:nth-child(7){
+        top:650px;
+        left:50px;
+        background: radial-gradient(center, ellipse cover,  rgba(195,255,104,0.65) 0%,rgba(0,0,0,0) 100%);
+        box-shadow:0px 0px 5px 0px #C3FF68; 
+        animation-duration: 15s;
+    }
+    
+    i:nth-child(8){
+        top:20px;
+        right:100px;
+        background: radial-gradient(center, ellipse cover,  rgba(255,0,102,0.65) 0%,rgba(0,0,0,0) 100%);
+        box-shadow:0px 0px 5px 0px #FF0066; 
+        animation-duration: 5s;
+    }
+
+    i:nth-child(9){
+        bottom:50px;
+        right:132px;
+        background: radial-gradient(center, ellipse cover,  rgba(255,255,0,0.65) 0%,rgba(0,0,0,0) 100%);
+        box-shadow:0px 0px 5px 0px #FFFF00; 
+        animation-duration: 13s;
+    }
+    
+    i:nth-child(10){
+        top:578px;
+        left:357px;
+        background: radial-gradient(center, ellipse cover,  rgba(127,175,27,0.65) 0%,rgba(0,0,0,0) 100%);
+        box-shadow:0px 0px 5px 0px #7FAF1B; 
+        animation-duration: 4s;
+    }
+
+    i:nth-child(11){
+        top:380px;
+        left:230px;
+        background: radial-gradient(center, ellipse cover,  rgba(1,210,255,0.65) 0%,rgba(0,0,0,0) 100%);
+        box-shadow:0px 0px 5px 0px #01D2FF; 
+        animation-duration: 5s;
+    }
+    
+    i:nth-child(12){
+        top:570px;
+        left:1100px;
+        background: radial-gradient(center, ellipse cover,  rgba(237,247,255,0.65) 0%,rgba(0,0,0,0) 100%);
+        box-shadow:0px 0px 5px 0px #EDF7FF; 
+        animation-duration: 6s;
+    }
+    
+    i:nth-child(13){
+        top:600px;
+        left:600px;
+        background: radial-gradient(center, ellipse cover,  rgba(0,255,255,0.65) 0%,rgba(0,0,0,0) 100%);
+        box-shadow:0px 0px 5px 0px #00FFFF; 
+        animation-duration: 7s;
+    }
+    
+    i:nth-child(14){
+        top:200px;
+        left:520px;
+        background: radial-gradient(center, ellipse cover,  rgba(0,0,255,0.65) 0%,rgba(0,0,0,0) 100%);
+        box-shadow:0px 0px 5px 0px #0000FF; 
+        animation-duration: 14s;
+    }
+    
+    i:nth-child(15){
+        top:370px;
+        left:500px;
+        background: radial-gradient(center, ellipse cover,  rgba(16,225,228,0.65) 0%,rgba(0,0,0,0) 100%);
+        box-shadow:0px 0px 5px 0px #10e1e4; 
+        animation-duration: 9s;
+    }
+
+    @keyframes screen {
+        from {
+            opacity: 0;
+        }
+    
+        25%{
+            opacity: 0.3;
+            transform: scale3d(3, 3, 4);
+        }
+    
+        50%{
+            opacity: 0.75;
+        }
+    
+        75%{
+            opacity: 1;
+    
+        }
+    
+        to{
+            opacity: 0;
+        }
+    }
